@@ -29,6 +29,12 @@ for label, sym in SYMS:
 for sym in ("MES=F", "ES=F"):
     try:
         r = get(sym); q = r["indicators"]["quote"][0]; bars = []
+        if "live" not in out:
+            lv = []
+            for i, ts in enumerate(r["timestamp"]):
+                v = [q[k][i] for k in ("open", "high", "low", "close")]
+                if None not in v: lv.append({"t": datetime.datetime.fromtimestamp(ts, CT).strftime("%m-%d %H:%M"), "o": v[0], "h": v[1], "l": v[2], "c": v[3]})
+            out["live"] = {"symbol": sym, "bars": lv[-48:]}
         for i, ts in enumerate(r["timestamp"]):
             t = datetime.datetime.fromtimestamp(ts, CT)
             if t.strftime("%Y-%m-%d") != DATE or not (8, 0) <= (t.hour, t.minute) <= (11, 0): continue

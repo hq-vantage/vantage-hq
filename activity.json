@@ -1,0 +1,9 @@
+[
+ {"time":"2026-10-09 09:50","crew":"Opener","text":"Buy-stop trigger 7844.50 hit (9:50 bar); stop/target NOT attached"},
+ {"time":"2026-10-09 09:53","crew":"Opener","text":"long 7846.50 filled (~2 pts slippage)"},
+ {"time":"2026-10-09 09:57","crew":"Opener","text":"time exit ~7848.00, +$7.45 net (WIN)"},
+ {"time":"2026-10-09 09:57","crew":"Risk Officer","text":"rules miss: bracket not attached"},
+ {"time":"2026-10-12 08:45","crew":"Opener","text":"OR 7870.00-7862.25 (7.75 pts) - short trigger 7862.00"},
+ {"time":"2026-10-12 09:15","crew":"Opener","text":"MISSED short setup (routine failed, logged out, stale chart); target 7854.25 would have hit"},
+ {"time":"2026-10-13 07:28","crew":"Opener","text":"Login"}
+]

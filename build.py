@@ -72,8 +72,32 @@ data = {
             "best": max([t["pnl"] for t in taken], default=None), "max_drawdown": round(mdd, 2), "curve": curve},
     "trades": trades, "latest": trades[-1] if trades else None,
 }
+def jload(n, d):
+    p = os.path.join(HERE, n); return json.load(open(p)) if os.path.exists(p) else d
+sp = os.path.join(HERE, "shadow.csv")
+shadow = [dict(r, pnl_net=num(r["pnl_net"])) for r in csv.DictReader(open(sp))] if os.path.exists(sp) else []
+data["shadow"] = shadow; data["activity"] = jload("activity.json", [])
+data["dots"] = [{"date": t["date"], "status": t["status"], "pnl": t["pnl"]} for t in trades]
+for c in data["crew"]:
+    key = c["name"].replace("The ", "")
+    rs = [r for r in shadow if r["crew"] == key and r["exit_reason"] not in ("no data",)]
+    if rs:
+        tr = [r for r in rs if r["exit_reason"] != "no trade"]
+        c["paper"] = {"days": len(rs), "trades": len(tr), "wins": sum((r["pnl_net"] or 0) > 0 for r in tr),
+                      "losses": sum((r["pnl_net"] or 0) <= 0 for r in tr), "net": round(sum(r["pnl_net"] or 0 for r in tr), 2), "rows": rs}
 ck = os.path.join(HERE, "checklist.json")
-data["checklist"] = json.load(open(ck)) if os.path.exists(ck) else []
+data["checklist"] = json.load(open(ck)) if os.path.exists(ck) else {}
+# floor status tags, derived from data (override any via status.json {"The Opener": "In trade"})
+done = {i["label"]: i["done"] for i in data["checklist"].get("items", [])}
+today = datetime.datetime.now().strftime("%Y-%m-%d"); ckt = data["checklist"].get("date") == today
+op = ("Order placed" if done.get("Orders placed") else "Watching range" if done.get("Range measured") else
+      "Chart live" if done.get("Chart live") else "Logged in" if done.get("Login") else "Off duty") if ckt else "Off duty"
+tags = {"The Opener": op, "The Trend Rider": "Paper-tracking" if data["crew"][1].get("paper") else "Not started",
+        "The Closer": "Paper-tracking" if data["crew"][2].get("paper") else "Not started",
+        "The Analyst": ("News read" if done.get("News read") else "News pending") if ckt else "Off duty",
+        "The Risk Officer": "Rules miss flagged" if (trades and trades[-1].get("rules_ok") is False) else "Risk in check"}
+tags.update(jload("status.json", {}))
+for c in data["crew"]: c["tag"] = tags.get(c["name"], "—")
 js = json.dumps(data, indent=1)
 open(os.path.join(HERE, "data.json"), "w").write(js)
 open(os.path.join(HERE, "data.js"), "w").write("window.VDATA=" + js + ";\n")

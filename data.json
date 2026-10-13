@@ -1,5 +1,5 @@
 {
- "built": "2026-10-12 23:23 CT",
+ "built": "2026-10-13 09:06 CT",
  "account": "SIM",
  "start_balance": 50000.0,
  "balance": 50007.45,
@@ -25,7 +25,8 @@
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
-   "active": true
+   "active": true,
+   "tag": "Logged in"
   },
   {
    "name": "The Trend Rider",
@@ -37,7 +38,51 @@
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
-   "active": false
+   "active": false,
+   "paper": {
+    "days": 2,
+    "trades": 2,
+    "wins": 2,
+    "losses": 0,
+    "net": 23.25,
+    "rows": [
+     {
+      "date": "2026-10-09",
+      "crew": "Trend Rider",
+      "or_high": "7844.25",
+      "or_low": "7826.5",
+      "width": "17.75",
+      "side": "Long",
+      "entry_time": "09:50",
+      "entry": "7846.25",
+      "stop": "7826.5",
+      "target": "7873.0",
+      "exit_time": "09:55",
+      "exit": "7849.0",
+      "exit_reason": "time",
+      "pnl_net": 12.25,
+      "note": "VWAP 7837.35 at entry"
+     },
+     {
+      "date": "2026-10-12",
+      "crew": "Trend Rider",
+      "or_high": "7870.0",
+      "or_low": "7862.25",
+      "width": "7.75",
+      "side": "Short",
+      "entry_time": "08:45",
+      "entry": "7860.0",
+      "stop": "7870.0",
+      "target": "7848.5",
+      "exit_time": "09:55",
+      "exit": "7857.5",
+      "exit_reason": "time",
+      "pnl_net": 11.0,
+      "note": "VWAP 7864.93 at entry"
+     }
+    ]
+   },
+   "tag": "Paper-tracking"
   },
   {
    "name": "The Closer",
@@ -49,7 +94,51 @@
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
-   "active": false
+   "active": false,
+   "paper": {
+    "days": 2,
+    "trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "net": 55.75,
+    "rows": [
+     {
+      "date": "2026-10-09",
+      "crew": "Closer",
+      "or_high": "7844.25",
+      "or_low": "7826.5",
+      "width": "17.75",
+      "side": "Long",
+      "entry_time": "09:50",
+      "entry": "7844.5",
+      "stop": "7826.5",
+      "target": "7880.0",
+      "exit_time": "11:25",
+      "exit": "7856.25",
+      "exit_reason": "time",
+      "pnl_net": 57.25,
+      "note": ""
+     },
+     {
+      "date": "2026-10-12",
+      "crew": "Closer",
+      "or_high": "7870.0",
+      "or_low": "7862.25",
+      "width": "7.75",
+      "side": "Short",
+      "entry_time": "08:45",
+      "entry": "7862.0",
+      "stop": "7870.0",
+      "target": "7846.5",
+      "exit_time": "10:40",
+      "exit": "7862.0",
+      "exit_reason": "breakeven",
+      "pnl_net": -1.5,
+      "note": ""
+     }
+    ]
+   },
+   "tag": "Paper-tracking"
   },
   {
    "name": "The Analyst",
@@ -61,7 +150,8 @@
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
-   "active": false
+   "active": false,
+   "tag": "News pending"
   },
   {
    "name": "The Risk Officer",
@@ -73,7 +163,8 @@
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
-   "active": false
+   "active": false,
+   "tag": "Rules miss flagged"
   }
  ],
  "pnl": {
@@ -155,18 +246,137 @@
   "status": "MISSED",
   "hypothetical": true
  },
+ "shadow": [
+  {
+   "date": "2026-10-09",
+   "crew": "Closer",
+   "or_high": "7844.25",
+   "or_low": "7826.5",
+   "width": "17.75",
+   "side": "Long",
+   "entry_time": "09:50",
+   "entry": "7844.5",
+   "stop": "7826.5",
+   "target": "7880.0",
+   "exit_time": "11:25",
+   "exit": "7856.25",
+   "exit_reason": "time",
+   "pnl_net": 57.25,
+   "note": ""
+  },
+  {
+   "date": "2026-10-09",
+   "crew": "Trend Rider",
+   "or_high": "7844.25",
+   "or_low": "7826.5",
+   "width": "17.75",
+   "side": "Long",
+   "entry_time": "09:50",
+   "entry": "7846.25",
+   "stop": "7826.5",
+   "target": "7873.0",
+   "exit_time": "09:55",
+   "exit": "7849.0",
+   "exit_reason": "time",
+   "pnl_net": 12.25,
+   "note": "VWAP 7837.35 at entry"
+  },
+  {
+   "date": "2026-10-12",
+   "crew": "Closer",
+   "or_high": "7870.0",
+   "or_low": "7862.25",
+   "width": "7.75",
+   "side": "Short",
+   "entry_time": "08:45",
+   "entry": "7862.0",
+   "stop": "7870.0",
+   "target": "7846.5",
+   "exit_time": "10:40",
+   "exit": "7862.0",
+   "exit_reason": "breakeven",
+   "pnl_net": -1.5,
+   "note": ""
+  },
+  {
+   "date": "2026-10-12",
+   "crew": "Trend Rider",
+   "or_high": "7870.0",
+   "or_low": "7862.25",
+   "width": "7.75",
+   "side": "Short",
+   "entry_time": "08:45",
+   "entry": "7860.0",
+   "stop": "7870.0",
+   "target": "7848.5",
+   "exit_time": "09:55",
+   "exit": "7857.5",
+   "exit_reason": "time",
+   "pnl_net": 11.0,
+   "note": "VWAP 7864.93 at entry"
+  }
+ ],
+ "activity": [
+  {
+   "time": "2026-10-09 09:50",
+   "crew": "Opener",
+   "text": "Buy-stop trigger 7844.50 hit (9:50 bar); stop/target NOT attached"
+  },
+  {
+   "time": "2026-10-09 09:53",
+   "crew": "Opener",
+   "text": "long 7846.50 filled (~2 pts slippage)"
+  },
+  {
+   "time": "2026-10-09 09:57",
+   "crew": "Opener",
+   "text": "time exit ~7848.00, +$7.45 net (WIN)"
+  },
+  {
+   "time": "2026-10-09 09:57",
+   "crew": "Risk Officer",
+   "text": "rules miss: bracket not attached"
+  },
+  {
+   "time": "2026-10-12 08:45",
+   "crew": "Opener",
+   "text": "OR 7870.00-7862.25 (7.75 pts) - short trigger 7862.00"
+  },
+  {
+   "time": "2026-10-12 09:15",
+   "crew": "Opener",
+   "text": "MISSED short setup (routine failed, logged out, stale chart); target 7854.25 would have hit"
+  },
+  {
+   "time": "2026-10-13 07:28",
+   "crew": "Opener",
+   "text": "Login"
+  }
+ ],
+ "dots": [
+  {
+   "date": "2026-10-09",
+   "status": "WIN",
+   "pnl": 7.45
+  },
+  {
+   "date": "2026-10-12",
+   "status": "MISSED",
+   "pnl": null
+  }
+ ],
  "checklist": {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "items": [
    {
     "label": "Login",
     "done": true,
-    "time": "7:31"
+    "time": "7:28"
    },
    {
     "label": "Chart live",
-    "done": true,
-    "time": "8:14"
+    "done": false,
+    "time": null
    },
    {
     "label": "News read",

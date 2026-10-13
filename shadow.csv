@@ -1,0 +1,5 @@
+date,crew,or_high,or_low,width,side,entry_time,entry,stop,target,exit_time,exit,exit_reason,pnl_net,note
+2026-10-09,Closer,7844.25,7826.5,17.75,Long,09:50,7844.5,7826.5,7880.0,11:25,7856.25,time,57.25,
+2026-10-09,Trend Rider,7844.25,7826.5,17.75,Long,09:50,7846.25,7826.5,7873.0,09:55,7849.0,time,12.25,VWAP 7837.35 at entry
+2026-10-12,Closer,7870.0,7862.25,7.75,Short,08:45,7862.0,7870.0,7846.5,10:40,7862.0,breakeven,-1.5,
+2026-10-12,Trend Rider,7870.0,7862.25,7.75,Short,08:45,7860.0,7870.0,7848.5,09:55,7857.5,time,11.0,VWAP 7864.93 at entry

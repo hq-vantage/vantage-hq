@@ -22,7 +22,7 @@ $('xptip').dataset.t=`XP rule (Opener's journal):\n+${R.rules_followed} trade/se
 $('crew').innerHTML=(D.crew||[]).map((c,i)=>`<div class="panel card"><h3><span class="lvl">${c.level}</span>${c.name.toUpperCase()}</h3><div class="role">${c.strategy}</div>${avatar(i)}
 <div class="row"><span>XP <b>${c.xp}</b> / ${(c.level)*R.per_level}</span><span class="m">Lvl ${c.level}</span></div><div class="bar"><i style="width:${c.xp_in_level}%"></i></div>
 <div class="row"><span>WINS <b class="g">${dash(c.wins)}</b></span><span>LOSSES <b class="r">${dash(c.losses)}</b></span></div>
-<div class="row"><span>WIN RATE</span><b class="g">${c.win_rate==null?'—':c.win_rate+'%'}</b></div><div class="pill ${c.active?'':'off'}">${c.status}</div></div>`).join('');
+<div class="row"><span>WIN RATE</span><b class="g">${c.win_rate==null?'—':c.win_rate+'%'}</b></div>${c.paper?`<div class="paper"><div class="pl">PAPER-TRACKED (not traded)</div>${c.paper.trades} trades: ${c.paper.wins}W/${c.paper.losses}L • net <b class="${c.paper.net>=0?'g':'r'}">${money(c.paper.net)}</b><br>${c.paper.rows.map(r=>`<span class="m">${r.date.slice(5)}</span> ${r.side||''} ${r.exit_reason} ${money(r.pnl_net)}`).join('<br>')}</div>`:''}<div class="pill ${c.active?'':'off'}">${c.status}</div></div>`).join('');
 $('dxp').textContent=(D.crew||[]).reduce((s,c)=>s+c.xp,0);
 $('bal').textContent=D.balance!=null?'$'+D.balance.toLocaleString(undefined,{minimumFractionDigits:2}):'—';
 const P=D.pnl||{};$('net').textContent=money(P.net);$('net').className='big '+(P.net>0?'g':P.net<0?'r':'');
@@ -47,3 +47,15 @@ $('ckc').textContent=items.filter(x=>x.done).length+' / '+items.length+' DONE';$
 $('mk').innerHTML=(M.quotes||[]).map(q=>`<div>${q.label}<b>${q.price==null?'—':q.price.toLocaleString(undefined,{minimumFractionDigits:2})}</b><span class="${q.pct>=0?'g':'r'}">${q.pct==null?'—':(q.pct>=0?'+':'')+q.pct.toFixed(2)+'%'}</span></div>`).join('');
 $('msrc').textContent=`${M.source||'—'} • fetched ${M.fetched||'—'}`;$('mtime').textContent='Quotes '+(M.fetched||'—');
 $('foot').textContent=`Built ${D.built||'—'} from journal.csv • Account: SIM • Paper trading only, not advice.`;
+
+// floor
+(()=>{const m=matchMedia('(max-width:800px)').matches;
+ const P=m?[[3,37],[36,40],[69,37],[3,66],[69,66]]:[[14,50],[1,10],[71,50],[85,10],[57,52]];
+ const fl=$('floor');(D.crew||[]).forEach((c,i)=>{const d=document.createElement('div');d.className='seat'+(c.active?' on':'');
+  d.style.left=P[i][0]+'%';d.style.top=P[i][1]+'%';d.innerHTML=`<div class="tag">${c.tag||'—'}</div>${avatar(i)}<div class="nm">${c.name.replace('The ','')}</div>`;fl.appendChild(d)});
+ const L=M.live;if(!L||!L.bars.length){$('wall').innerHTML='<text x="200" y="80" fill="#9aa3ab" text-anchor="middle" font-size="14">no market data</text>';return}
+ const b=L.bars,lo=Math.min(...b.map(x=>x.l)),hi=Math.max(...b.map(x=>x.h)),bw=400/b.length,Y=p=>14+(hi-p)/(hi-lo||1)*130;
+ $('wall').innerHTML=b.map((k,i)=>{const c=k.c>=k.o?'#3ddc6a':'#ff5a5a',x=i*bw;return `<line x1="${x+bw/2}" x2="${x+bw/2}" y1="${Y(k.h)}" y2="${Y(k.l)}" stroke="${c}"/><rect x="${x+1}" width="${Math.max(bw-2,1)}" y="${Y(Math.max(k.o,k.c))}" height="${Math.max(Math.abs(Y(k.o)-Y(k.c)),1)}" fill="${c}"/>`}).join('');
+ const last=b[b.length-1];$('scap').textContent=`${L.symbol.replace('=F','')} 5m ${last.c.toFixed(2)} @ ${last.t} CT (delayed)`})();
+$('log').innerHTML=(D.activity||[]).slice().reverse().map(e=>`<div><span class="tm">${e.time}</span> <span class="cr">${e.crew}:</span> ${e.text}</div>`).join('')||'—';
+$('dots').innerHTML=(D.dots||[]).map(d=>`<span class="dt ${d.status}" tabindex="0" data-t="${d.date} • ${d.status} • ${d.pnl==null?'—':money(d.pnl)}"></span>`).join('')||'—';

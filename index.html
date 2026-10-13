@@ -24,11 +24,36 @@ header{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .note{font-size:11px;color:var(--mut);margin-top:6px}footer{color:var(--mut);font-size:11px;margin-top:12px}
 @media(max-width:1100px){.crew{grid-template-columns:repeat(3,1fr)}.bottom{grid-template-columns:1fr}}
 @media(max-width:600px){body{padding:10px}h1{font-size:26px}.crew{grid-template-columns:1fr 1fr}.mk{grid-template-columns:1fr 1fr}.big{font-size:28px}}
+
+.floor{position:relative;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;background:repeating-linear-gradient(90deg,#1b1f22 0 40px,#181b1e 40px 80px);aspect-ratio:16/6.5;min-height:300px}
+.floor .wall{position:absolute;left:0;right:0;top:0;height:38%;background:#0f1416;border-bottom:4px solid #2a2218}
+.floor .scr{position:absolute;left:30%;width:40%;top:5%;height:42%;background:#05090b;border:4px solid #333;border-radius:4px;box-shadow:0 0 24px #3ddc6a33;z-index:2}
+.floor .scr svg{width:100%;height:100%}.scr .cap{position:absolute;left:6px;top:3px;font:8px 'Press Start 2P';color:var(--gold)}
+.seat{position:absolute;width:13%;text-align:center;animation:bob 3s ease-in-out infinite;z-index:3}.seat svg{width:100%;image-rendering:pixelated;border-radius:4px}
+.seat:nth-child(odd){animation-delay:-1.4s}@keyframes bob{50%{transform:translateY(-4px)}}
+.seat.on svg{box-shadow:0 0 14px 4px #f2b632aa;outline:2px solid var(--gold)}
+.tag{display:inline-block;background:#000c;border:1px solid var(--gold);color:var(--txt);font-size:11px;padding:2px 6px;border-radius:10px;margin-bottom:4px;white-space:nowrap}
+.seat.on .tag{background:var(--gold);color:#000;font-weight:800}.seat .nm{font-size:10px;color:var(--mut)}
+.mgr{position:absolute;left:36%;width:16%;top:60%;text-align:center;z-index:3}.mgr .desk{background:#3a2a1c;border-top:3px solid var(--gold);border-radius:4px;padding:6px 2px;font:9px 'Press Start 2P';color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.seat{animation:none}}
+.mid{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-bottom:12px}
+.log{background:#05090b;font:12px/1.5 ui-monospace,Menlo,monospace;color:#9fe8b0;height:170px;overflow-y:auto;padding:8px;border-radius:6px;border:1px solid #1f3a28}.log .tm{color:var(--mut)}.log .cr{color:var(--gold)}
+.dots{display:flex;gap:10px;flex-wrap:wrap;padding:6px 0}.dt{width:20px;height:20px;border-radius:50%;position:relative;cursor:pointer;outline:none}
+.dt.WIN{background:var(--green);box-shadow:0 0 10px var(--green)}.dt.LOSS{background:var(--red);box-shadow:0 0 10px var(--red)}.dt.MISSED,.dt.SKIP,.dt.SCRATCH{border:2px solid #777}
+.dt:hover:after,.dt:focus:after{content:attr(data-t);position:absolute;left:0;top:26px;background:#000;border:1px solid var(--gold);padding:4px 6px;border-radius:5px;font-size:12px;white-space:nowrap;z-index:9}
+.paper{margin-top:6px;border:1px dashed var(--gold);border-radius:6px;padding:5px;font-size:12px}.paper .pl{font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.4px}
+.crew.compact .card svg{max-height:90px;object-fit:cover}
+@media(max-width:800px){.mid{grid-template-columns:1fr}.floor{aspect-ratio:auto;height:430px}.floor .scr{left:5%;width:90%;height:30%;top:3%}.floor .wall{height:36%}
+ .seat{width:28%}.mgr{left:36%;width:28%;top:auto;bottom:4%}}
 </style></head><body>
 <header><div><h1>VANTAGE HQ</h1><div class="sub">TRADING DESK CREW • MES PAPER TRADING (SIM)</div></div>
 <div class="hstat"><div><span class="dot" id="mdot"></span><small id="mtime">—</small></div><div><small>SIM BALANCE</small><b id="bal">—</b></div><div><small>DESK XP</small><b id="dxp">—</b></div>
 <span class="tip" tabindex="0" id="xptip">i</span></div></header>
-<section class="crew" id="crew"></section>
+<section class="floor" id="floor" aria-label="Pixel trading floor"><div class="wall"></div><div class="scr"><span class="cap" id="scap">MES 5m</span><svg id="wall" viewBox="0 0 400 150" preserveAspectRatio="none"></svg></div><div class="mgr"><div class="desk">VANTAGE</div><div class="nm" style="font-size:10px;color:#9aa3ab">manager desk</div></div></section>
+<section class="mid"><div class="panel"><h2>ACTIVITY LOG <small class="m" style="font-size:11px">activity.json</small></h2><div class="log" id="log"></div></div>
+<div class="panel"><h2>WIN / LOSS DOTS</h2><div class="dots" id="dots"></div><div class="note">● green win • ● red loss • ○ gray missed/skipped (not counted). Hover/tap a dot.</div></div></section>
+<h2 style="color:var(--gold);font-size:16px;margin:4px 0 8px">CREW ROSTER</h2>
+<section class="crew compact" id="crew"></section>
 <section class="bottom">
 <div class="panel"><h2>P&amp;L SUMMARY <small class="m" style="font-size:11px">since start (SIM)</small></h2><div class="big" id="net">—</div><div id="netp" class="m">—</div>
 <div class="kv" style="margin:10px 0" id="kv"></div><svg id="eq" viewBox="0 0 300 80" width="100%" height="80"></svg><div class="note" id="tally"></div></div>
