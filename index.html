@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vantage HQ - Trading Desk Crew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121416;--panel:#1a1d20;--line:#2c3236;--gold:#f2b632;--green:#3ddc6a;--red:#ff5a5a;--txt:#e9ecef;--mut:#9aa3ab}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.4 Inter,system-ui,sans-serif;padding:16px}
+h1{font:800 34px Inter;color:var(--gold);margin:0;letter-spacing:1px}.sub{color:var(--gold);font-weight:600;font-size:13px;letter-spacing:.5px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.hstat{display:flex;gap:18px;align-items:center}.hstat b{display:block;font-size:22px;color:var(--gold)}.hstat small{color:var(--mut)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-right:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.crew{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:12px}
+.card h3{margin:0;font-size:16px;color:var(--gold);display:flex;gap:8px;align-items:center}.lvl{border:2px solid var(--gold);border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-size:13px;flex:none}
+.card .role{color:var(--mut);font-size:12px;margin:2px 0 8px}.card svg{width:100%;height:auto;image-rendering:pixelated;border-radius:6px;display:block;background:#0d1a20}
+.row{display:flex;justify-content:space-between;font-size:13px;margin-top:4px}.g{color:var(--green)}.r{color:var(--red)}.m{color:var(--mut)}
+.bar{height:6px;background:#2a2f33;border-radius:4px;margin:6px 0 4px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green))}
+.pill{margin-top:8px;text-align:center;font-weight:800;font-size:12px;padding:5px;border-radius:6px;border:1px solid #2e6b3f;background:#173322;color:#cfe;letter-spacing:.5px}.pill.off{background:#24272a;border-color:#3a3f44;color:var(--mut)}
+.bottom{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:12px}.panel h2{margin:0 0 8px;font-size:16px;color:var(--gold);display:flex;justify-content:space-between;align-items:center}
+.big{font-size:34px;font-weight:800}.kv{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:13px}
+.ck{display:flex;justify-content:space-between;padding:7px 8px;border:1px solid var(--line);border-radius:6px;margin-bottom:6px;font-size:14px}.ck span:first-child:before{content:"☐ ";color:var(--mut)}.ck.done span:first-child:before{content:"☑ ";color:var(--green)}
+.mk{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.mk div{border:1px solid var(--line);border-radius:6px;padding:6px;text-align:center;font-size:13px}.mk b{display:block;font-size:15px}
+.tip{position:relative;cursor:help;border:1px solid var(--mut);border-radius:50%;width:18px;height:18px;display:inline-grid;place-items:center;font-size:11px;color:var(--mut)}
+.tip:hover:after,.tip:focus:after{content:attr(data-t);position:absolute;right:0;top:22px;width:240px;background:#000;border:1px solid var(--gold);padding:8px;border-radius:6px;font-size:12px;color:var(--txt);white-space:pre-line;z-index:9;font-weight:400}
+.note{font-size:11px;color:var(--mut);margin-top:6px}footer{color:var(--mut);font-size:11px;margin-top:12px}
+@media(max-width:1100px){.crew{grid-template-columns:repeat(3,1fr)}.bottom{grid-template-columns:1fr}}
+@media(max-width:600px){body{padding:10px}h1{font-size:26px}.crew{grid-template-columns:1fr 1fr}.mk{grid-template-columns:1fr 1fr}.big{font-size:28px}}
+</style></head><body>
+<header><div><h1>VANTAGE HQ</h1><div class="sub">TRADING DESK CREW • MES PAPER TRADING (SIM)</div></div>
+<div class="hstat"><div><span class="dot" id="mdot"></span><small id="mtime">—</small></div><div><small>SIM BALANCE</small><b id="bal">—</b></div><div><small>DESK XP</small><b id="dxp">—</b></div>
+<span class="tip" tabindex="0" id="xptip">i</span></div></header>
+<section class="crew" id="crew"></section>
+<section class="bottom">
+<div class="panel"><h2>P&amp;L SUMMARY <small class="m" style="font-size:11px">since start (SIM)</small></h2><div class="big" id="net">—</div><div id="netp" class="m">—</div>
+<div class="kv" style="margin:10px 0" id="kv"></div><svg id="eq" viewBox="0 0 300 80" width="100%" height="80"></svg><div class="note" id="tally"></div></div>
+<div class="panel"><h2>TODAY'S CHECKLIST <small id="ckc" class="g" style="font-size:12px"></small></h2><div id="ck"></div><div class="note" id="ckd"></div></div>
+<div class="panel"><h2>LIVE TRADE <small id="lt" class="m" style="font-size:12px"></small></h2><svg id="chart" viewBox="0 0 520 240" width="100%"></svg><div class="note" id="cnote"></div>
+<h2 style="margin-top:10px">MARKETS</h2><div class="mk" id="mk"></div><div class="note" id="msrc"></div></div>
+</section><footer id="foot"></footer>
+<script src="data.js"></script><script src="market.js"></script><script src="app.js"></script></body></html>
