@@ -1,12 +1,12 @@
 {
- "built": "2026-10-13 09:06 CT",
+ "built": "2026-10-15 10:12 CT",
  "account": "SIM",
  "start_balance": 50000.0,
- "balance": 50007.45,
+ "balance": 49813.7,
  "tally": {
   "wins": 1,
-  "losses": 0,
-  "missed": 1
+  "losses": 2,
+  "missed": 2
  },
  "xp_rules": {
   "rules_followed": 10,
@@ -20,13 +20,13 @@
    "strategy": "Opening Range",
    "status": "ACTIVE",
    "wins": 1,
-   "losses": 0,
-   "win_rate": 100,
+   "losses": 2,
+   "win_rate": 33,
    "xp": 0,
    "level": 1,
    "xp_in_level": 0,
    "active": true,
-   "tag": "Logged in"
+   "tag": "Off duty"
   },
   {
    "name": "The Trend Rider",
@@ -40,11 +40,11 @@
    "xp_in_level": 0,
    "active": false,
    "paper": {
-    "days": 2,
-    "trades": 2,
+    "days": 4,
+    "trades": 4,
     "wins": 2,
-    "losses": 0,
-    "net": 23.25,
+    "losses": 2,
+    "net": -177.25,
     "rows": [
      {
       "date": "2026-10-09",
@@ -79,6 +79,40 @@
       "exit_reason": "time",
       "pnl_net": 11.0,
       "note": "VWAP 7864.93 at entry"
+     },
+     {
+      "date": "2026-10-14",
+      "crew": "Trend Rider",
+      "or_high": "7834.25",
+      "or_low": "7819.25",
+      "width": "15.0",
+      "side": "Long",
+      "entry_time": "08:45",
+      "entry": "7836.0",
+      "stop": "7819.25",
+      "target": "7858.5",
+      "exit_time": "08:55",
+      "exit": "7819.25",
+      "exit_reason": "stop",
+      "pnl_net": -85.25,
+      "note": "VWAP 7828.52 at entry"
+     },
+     {
+      "date": "2026-10-15",
+      "crew": "Trend Rider",
+      "or_high": "7747.75",
+      "or_low": "7725.5",
+      "width": "22.25",
+      "side": "Short",
+      "entry_time": "08:50",
+      "entry": "7719.0",
+      "stop": "7747.75",
+      "target": "7685.5",
+      "exit_time": "09:02",
+      "exit": "7741.75",
+      "exit_reason": "time",
+      "pnl_net": -115.25,
+      "note": "VWAP 7735.10 at entry"
      }
     ]
    },
@@ -96,11 +130,11 @@
    "xp_in_level": 0,
    "active": false,
    "paper": {
-    "days": 2,
-    "trades": 2,
+    "days": 4,
+    "trades": 4,
     "wins": 1,
-    "losses": 1,
-    "net": 55.75,
+    "losses": 3,
+    "net": -106.0,
     "rows": [
      {
       "date": "2026-10-09",
@@ -135,6 +169,40 @@
       "exit_reason": "breakeven",
       "pnl_net": -1.5,
       "note": ""
+     },
+     {
+      "date": "2026-10-14",
+      "crew": "Closer",
+      "or_high": "7834.25",
+      "or_low": "7819.25",
+      "width": "15.0",
+      "side": "Long",
+      "entry_time": "08:45",
+      "entry": "7834.5",
+      "stop": "7819.25",
+      "target": "7864.5",
+      "exit_time": "08:55",
+      "exit": "7819.25",
+      "exit_reason": "stop",
+      "pnl_net": -77.75,
+      "note": ""
+     },
+     {
+      "date": "2026-10-15",
+      "crew": "Closer",
+      "or_high": "7747.75",
+      "or_low": "7725.5",
+      "width": "22.25",
+      "side": "Short",
+      "entry_time": "08:50",
+      "entry": "7725.25",
+      "stop": "7747.75",
+      "target": "7680.75",
+      "exit_time": "09:02",
+      "exit": "7741.75",
+      "exit_reason": "time",
+      "pnl_net": -84.0,
+      "note": ""
      }
     ]
    },
@@ -151,7 +219,7 @@
    "level": 1,
    "xp_in_level": 0,
    "active": false,
-   "tag": "News pending"
+   "tag": "Off duty"
   },
   {
    "name": "The Risk Officer",
@@ -168,12 +236,12 @@
   }
  ],
  "pnl": {
-  "net": 7.45,
-  "net_pct": 0.015,
+  "net": -186.3,
+  "net_pct": -0.373,
   "gross": null,
   "fees": null,
   "best": 7.45,
-  "max_drawdown": 0.0,
+  "max_drawdown": 193.75,
   "curve": [
    {
     "date": "start",
@@ -182,6 +250,14 @@
    {
     "date": "2026-10-09",
     "equity": 50007.45
+   },
+   {
+    "date": "2026-10-14",
+    "equity": 49931.2
+   },
+   {
+    "date": "2026-10-15",
+    "equity": 49813.7
    }
   ]
  },
@@ -224,27 +300,84 @@
    "note": "short would trigger 7862.00 stop 7870.00 target 7854.25 - target hit by 9:15 (low 7851.75); hypothetical +~$39; not placed: routine did not fire + logged out + stale chart   0 N       ",
    "status": "MISSED",
    "hypothetical": true
+  },
+  {
+   "date": "2026-10-13",
+   "news": "MES DEC26",
+   "range_high": 7863.25,
+   "range_low": 7847.0,
+   "width": 16.25,
+   "side": "Short",
+   "entry": 7846.75,
+   "stop": 7863.25,
+   "target": 7830.5,
+   "entry_time": null,
+   "exit_time": null,
+   "exit": null,
+   "exit_reason": null,
+   "pnl": null,
+   "rules_ok": false,
+   "note": "short would trigger 7846.75 (09:06 CT 1m bar low 7846.25) stop 7863.25 target 7830.50 - neither hit; time exit 9:57 ~7845.75 -> hypothetical +1.00 pt = +$5 gross / +$3.50 net (Yahoo MES=F 1m). Not placed: execution failure       0 N - execution failure (missed) 1W / 0L / 0S 7.45 ",
+   "status": "MISSED",
+   "hypothetical": true
+  },
+  {
+   "date": "2026-10-14",
+   "news": "",
+   "range_high": 7834.25,
+   "range_low": 7819.25,
+   "width": 15.0,
+   "side": "Long",
+   "entry": 7834.75,
+   "stop": 7819.5,
+   "target": 7849.75,
+   "entry_time": "n/a (not reported)",
+   "exit_time": "~08:54 CT",
+   "exit": 7819.5,
+   "exit_reason": "stop",
+   "pnl": -76.25,
+   "rules_ok": false,
+   "note": "N - entry 7834.75 is 2 ticks above buy-stop 7834.50 (slippage); stop 7819.50 is 1 tick inside opposite edge (rule = 7819.25). P&L as reported (~gross; $1.50 RT would make it -77.75)",
+   "status": "LOSS"
+  },
+  {
+   "date": "2026-10-15",
+   "news": "",
+   "range_high": 7747.75,
+   "range_low": 7725.5,
+   "width": 22.25,
+   "side": "Short",
+   "entry": 7725.25,
+   "stop": 7748.75,
+   "target": 7703.0,
+   "entry_time": "~08:53 CT",
+   "exit_time": "09:10 CT",
+   "exit": 7748.75,
+   "exit_reason": "stop",
+   "pnl": -117.5,
+   "rules_ok": false,
+   "note": "Partial - sell-stop 7725.25 = low-1 tick OK; stop filled 7748.75 = 1.00 pt beyond range high 7747.75 (rule = opposite edge; ~$5 extra loss",
+   "status": "LOSS"
   }
  ],
  "latest": {
-  "date": "2026-10-12",
-  "news": "MES DEC26",
-  "range_high": 7870.0,
-  "range_low": 7862.25,
-  "width": 7.75,
+  "date": "2026-10-15",
+  "news": "",
+  "range_high": 7747.75,
+  "range_low": 7725.5,
+  "width": 22.25,
   "side": "Short",
-  "entry": 7862.0,
-  "stop": 7870.0,
-  "target": 7854.25,
-  "entry_time": null,
-  "exit_time": null,
-  "exit": null,
-  "exit_reason": null,
-  "pnl": null,
+  "entry": 7725.25,
+  "stop": 7748.75,
+  "target": 7703.0,
+  "entry_time": "~08:53 CT",
+  "exit_time": "09:10 CT",
+  "exit": 7748.75,
+  "exit_reason": "stop",
+  "pnl": -117.5,
   "rules_ok": false,
-  "note": "short would trigger 7862.00 stop 7870.00 target 7854.25 - target hit by 9:15 (low 7851.75); hypothetical +~$39; not placed: routine did not fire + logged out + stale chart   0 N       ",
-  "status": "MISSED",
-  "hypothetical": true
+  "note": "Partial - sell-stop 7725.25 = low-1 tick OK; stop filled 7748.75 = 1.00 pt beyond range high 7747.75 (rule = opposite edge; ~$5 extra loss",
+  "status": "LOSS"
  },
  "shadow": [
   {
@@ -314,6 +447,74 @@
    "exit_reason": "time",
    "pnl_net": 11.0,
    "note": "VWAP 7864.93 at entry"
+  },
+  {
+   "date": "2026-10-14",
+   "crew": "Closer",
+   "or_high": "7834.25",
+   "or_low": "7819.25",
+   "width": "15.0",
+   "side": "Long",
+   "entry_time": "08:45",
+   "entry": "7834.5",
+   "stop": "7819.25",
+   "target": "7864.5",
+   "exit_time": "08:55",
+   "exit": "7819.25",
+   "exit_reason": "stop",
+   "pnl_net": -77.75,
+   "note": ""
+  },
+  {
+   "date": "2026-10-14",
+   "crew": "Trend Rider",
+   "or_high": "7834.25",
+   "or_low": "7819.25",
+   "width": "15.0",
+   "side": "Long",
+   "entry_time": "08:45",
+   "entry": "7836.0",
+   "stop": "7819.25",
+   "target": "7858.5",
+   "exit_time": "08:55",
+   "exit": "7819.25",
+   "exit_reason": "stop",
+   "pnl_net": -85.25,
+   "note": "VWAP 7828.52 at entry"
+  },
+  {
+   "date": "2026-10-15",
+   "crew": "Closer",
+   "or_high": "7747.75",
+   "or_low": "7725.5",
+   "width": "22.25",
+   "side": "Short",
+   "entry_time": "08:50",
+   "entry": "7725.25",
+   "stop": "7747.75",
+   "target": "7680.75",
+   "exit_time": "09:02",
+   "exit": "7741.75",
+   "exit_reason": "time",
+   "pnl_net": -84.0,
+   "note": ""
+  },
+  {
+   "date": "2026-10-15",
+   "crew": "Trend Rider",
+   "or_high": "7747.75",
+   "or_low": "7725.5",
+   "width": "22.25",
+   "side": "Short",
+   "entry_time": "08:50",
+   "entry": "7719.0",
+   "stop": "7747.75",
+   "target": "7685.5",
+   "exit_time": "09:02",
+   "exit": "7741.75",
+   "exit_reason": "time",
+   "pnl_net": -115.25,
+   "note": "VWAP 7735.10 at entry"
   }
  ],
  "activity": [
@@ -351,6 +552,11 @@
    "time": "2026-10-13 07:28",
    "crew": "Opener",
    "text": "Login"
+  },
+  {
+   "time": "2026-10-15 09:12",
+   "crew": "Vantage",
+   "text": "Journal: Oct 13 MISSED (hyp. short +$3.50 net), Oct 14 long stopped -$76.25, Oct 15 short stopped -$117.50; running -$186.30"
   }
  ],
  "dots": [
@@ -363,6 +569,21 @@
    "date": "2026-10-12",
    "status": "MISSED",
    "pnl": null
+  },
+  {
+   "date": "2026-10-13",
+   "status": "MISSED",
+   "pnl": null
+  },
+  {
+   "date": "2026-10-14",
+   "status": "LOSS",
+   "pnl": -76.25
+  },
+  {
+   "date": "2026-10-15",
+   "status": "LOSS",
+   "pnl": -117.5
   }
  ],
  "checklist": {
@@ -380,8 +601,8 @@
    },
    {
     "label": "News read",
-    "done": false,
-    "time": null
+    "done": true,
+    "time": "9:06"
    },
    {
     "label": "Range measured",
