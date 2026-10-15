@@ -38,5 +38,20 @@
   "time": "2026-10-15 09:12",
   "crew": "Vantage",
   "text": "Journal: Oct 13 MISSED (hyp. short +$3.50 net), Oct 14 long stopped -$76.25, Oct 15 short stopped -$117.50; running -$186.30"
+ },
+ {
+  "time": "2026-10-15 08:46",
+  "crew": "Opener",
+  "text": "OR 7747.75-7725.50 (22.25 pts); sell-stop 7725.25 filled SHORT 1 MES"
+ },
+ {
+  "time": "2026-10-15 08:46",
+  "crew": "Risk Officer",
+  "text": "SL buy-stop 7747.75 + TP buy-limit 7703.00 working"
+ },
+ {
+  "time": "2026-10-15 09:10",
+  "crew": "Opener",
+  "text": "stopped out @ 7748.75 (\u221223.5 pts, \u2212$117.50 gross) \u2014 LOSS"
  }
 ]

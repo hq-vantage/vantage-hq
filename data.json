@@ -1,5 +1,5 @@
 {
- "built": "2026-10-15 10:12 CT",
+ "built": "2026-10-15 09:13 CT",
  "account": "SIM",
  "start_balance": 50000.0,
  "balance": 49813.7,
@@ -26,7 +26,7 @@
    "level": 1,
    "xp_in_level": 0,
    "active": true,
-   "tag": "Off duty"
+   "tag": "Order placed"
   },
   {
    "name": "The Trend Rider",
@@ -219,7 +219,7 @@
    "level": 1,
    "xp_in_level": 0,
    "active": false,
-   "tag": "Off duty"
+   "tag": "News read"
   },
   {
    "name": "The Risk Officer",
@@ -232,7 +232,7 @@
    "level": 1,
    "xp_in_level": 0,
    "active": false,
-   "tag": "Rules miss flagged"
+   "tag": "Risk in check"
   }
  ],
  "pnl": {
@@ -342,41 +342,41 @@
   },
   {
    "date": "2026-10-15",
-   "news": "",
+   "news": "PPI Sep +1.3% MoM / +6.3% YoY (hottest since 2022; vs ~0.5-0.6%/5.4% fcast) at 7:30 CT ALREADY PAST; Retail Sales +0.8% (vs ~0.3%); Claims 199k (vs 200k). AI/semi selloff overnight. 9:00 CT: Business Inventories (low) + Fed Goolsbee interview. Blackout clear for ORB.",
    "range_high": 7747.75,
    "range_low": 7725.5,
    "width": 22.25,
    "side": "Short",
    "entry": 7725.25,
-   "stop": 7748.75,
+   "stop": 7747.75,
    "target": 7703.0,
-   "entry_time": "~08:53 CT",
+   "entry_time": "08:46 CT",
    "exit_time": "09:10 CT",
    "exit": 7748.75,
    "exit_reason": "stop",
    "pnl": -117.5,
-   "rules_ok": false,
-   "note": "Partial - sell-stop 7725.25 = low-1 tick OK; stop filled 7748.75 = 1.00 pt beyond range high 7747.75 (rule = opposite edge; ~$5 extra loss",
+   "rules_ok": true,
+   "note": "Y - resting sell-stop 7725.25 (low-1 tick) + buy-stop SL 7747.75 + buy-limit TP 7703.00 attached; opposite long cancelled. Stop fill 7748.75 = +1.00 pt slippage vs 7747.75 (~$5). Flat after stop; target auto-cancelled. P&L calculated from fills (gross; commission not shown on NT web).",
    "status": "LOSS"
   }
  ],
  "latest": {
   "date": "2026-10-15",
-  "news": "",
+  "news": "PPI Sep +1.3% MoM / +6.3% YoY (hottest since 2022; vs ~0.5-0.6%/5.4% fcast) at 7:30 CT ALREADY PAST; Retail Sales +0.8% (vs ~0.3%); Claims 199k (vs 200k). AI/semi selloff overnight. 9:00 CT: Business Inventories (low) + Fed Goolsbee interview. Blackout clear for ORB.",
   "range_high": 7747.75,
   "range_low": 7725.5,
   "width": 22.25,
   "side": "Short",
   "entry": 7725.25,
-  "stop": 7748.75,
+  "stop": 7747.75,
   "target": 7703.0,
-  "entry_time": "~08:53 CT",
+  "entry_time": "08:46 CT",
   "exit_time": "09:10 CT",
   "exit": 7748.75,
   "exit_reason": "stop",
   "pnl": -117.5,
-  "rules_ok": false,
-  "note": "Partial - sell-stop 7725.25 = low-1 tick OK; stop filled 7748.75 = 1.00 pt beyond range high 7747.75 (rule = opposite edge; ~$5 extra loss",
+  "rules_ok": true,
+  "note": "Y - resting sell-stop 7725.25 (low-1 tick) + buy-stop SL 7747.75 + buy-limit TP 7703.00 attached; opposite long cancelled. Stop fill 7748.75 = +1.00 pt slippage vs 7747.75 (~$5). Flat after stop; target auto-cancelled. P&L calculated from fills (gross; commission not shown on NT web).",
   "status": "LOSS"
  },
  "shadow": [
@@ -557,6 +557,21 @@
    "time": "2026-10-15 09:12",
    "crew": "Vantage",
    "text": "Journal: Oct 13 MISSED (hyp. short +$3.50 net), Oct 14 long stopped -$76.25, Oct 15 short stopped -$117.50; running -$186.30"
+  },
+  {
+   "time": "2026-10-15 08:46",
+   "crew": "Opener",
+   "text": "OR 7747.75-7725.50 (22.25 pts); sell-stop 7725.25 filled SHORT 1 MES"
+  },
+  {
+   "time": "2026-10-15 08:46",
+   "crew": "Risk Officer",
+   "text": "SL buy-stop 7747.75 + TP buy-limit 7703.00 working"
+  },
+  {
+   "time": "2026-10-15 09:10",
+   "crew": "Opener",
+   "text": "stopped out @ 7748.75 (\u221223.5 pts, \u2212$117.50 gross) \u2014 LOSS"
   }
  ],
  "dots": [
@@ -587,37 +602,37 @@
   }
  ],
  "checklist": {
-  "date": "2026-10-13",
+  "date": "2026-10-15",
   "items": [
    {
     "label": "Login",
     "done": true,
-    "time": "7:28"
+    "time": "7:06"
    },
    {
     "label": "Chart live",
-    "done": false,
-    "time": null
+    "done": true,
+    "time": "8:14"
    },
    {
     "label": "News read",
     "done": true,
-    "time": "9:06"
+    "time": "8:54"
    },
    {
     "label": "Range measured",
-    "done": false,
-    "time": null
+    "done": true,
+    "time": "8:55"
    },
    {
     "label": "Orders placed",
-    "done": false,
-    "time": null
+    "done": true,
+    "time": "8:46"
    },
    {
     "label": "Journal logged",
-    "done": false,
-    "time": null
+    "done": true,
+    "time": "9:13"
    }
   ]
  }

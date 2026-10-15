@@ -1,35 +1,11 @@
 {
- "date": "2026-10-13",
+ "date": "2026-10-15",
  "items": [
-  {
-   "label": "Login",
-   "done": true,
-   "time": "7:28"
-  },
-  {
-   "label": "Chart live",
-   "done": false,
-   "time": null
-  },
-  {
-   "label": "News read",
-   "done": true,
-   "time": "9:06"
-  },
-  {
-   "label": "Range measured",
-   "done": false,
-   "time": null
-  },
-  {
-   "label": "Orders placed",
-   "done": false,
-   "time": null
-  },
-  {
-   "label": "Journal logged",
-   "done": false,
-   "time": null
-  }
+  {"label": "Login", "done": true, "time": "7:06"},
+  {"label": "Chart live", "done": true, "time": "8:14"},
+  {"label": "News read", "done": true, "time": "8:54"},
+  {"label": "Range measured", "done": true, "time": "8:55"},
+  {"label": "Orders placed", "done": true, "time": "8:46"},
+  {"label": "Journal logged", "done": true, "time": "9:13"}
  ]
 }
